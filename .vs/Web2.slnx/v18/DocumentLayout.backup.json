@@ -1,12 +1,241 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "D:\\Web2\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{079C13C4-7CD4-2685-3D42-E2680D87BEBA}|Web2\\Web2.csproj|d:\\web2\\web2\\controllers\\bookscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{079C13C4-7CD4-2685-3D42-E2680D87BEBA}|Web2\\Web2.csproj|solutionrelative:web2\\controllers\\bookscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{079C13C4-7CD4-2685-3D42-E2680D87BEBA}|Web2\\Web2.csproj|d:\\web2\\web2\\models\\dto\\addbookrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{079C13C4-7CD4-2685-3D42-E2680D87BEBA}|Web2\\Web2.csproj|solutionrelative:web2\\models\\dto\\addbookrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{079C13C4-7CD4-2685-3D42-E2680D87BEBA}|Web2\\Web2.csproj|d:\\web2\\web2\\models\\dto\\bookwithauthorandpublisherdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{079C13C4-7CD4-2685-3D42-E2680D87BEBA}|Web2\\Web2.csproj|solutionrelative:web2\\models\\dto\\bookwithauthorandpublisherdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{079C13C4-7CD4-2685-3D42-E2680D87BEBA}|Web2\\Web2.csproj|d:\\web2\\web2\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{079C13C4-7CD4-2685-3D42-E2680D87BEBA}|Web2\\Web2.csproj|solutionrelative:web2\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{079C13C4-7CD4-2685-3D42-E2680D87BEBA}|Web2\\Web2.csproj|d:\\web2\\web2\\migrations\\20260923083722_initialdatabasemigration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{079C13C4-7CD4-2685-3D42-E2680D87BEBA}|Web2\\Web2.csproj|solutionrelative:web2\\migrations\\20260923083722_initialdatabasemigration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{079C13C4-7CD4-2685-3D42-E2680D87BEBA}|Web2\\Web2.csproj|d:\\web2\\web2\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{079C13C4-7CD4-2685-3D42-E2680D87BEBA}|Web2\\Web2.csproj|solutionrelative:web2\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{079C13C4-7CD4-2685-3D42-E2680D87BEBA}|Web2\\Web2.csproj|d:\\web2\\web2\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{079C13C4-7CD4-2685-3D42-E2680D87BEBA}|Web2\\Web2.csproj|solutionrelative:web2\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{079C13C4-7CD4-2685-3D42-E2680D87BEBA}|Web2\\Web2.csproj|d:\\web2\\web2\\models\\domain\\publishers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{079C13C4-7CD4-2685-3D42-E2680D87BEBA}|Web2\\Web2.csproj|solutionrelative:web2\\models\\domain\\publishers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{079C13C4-7CD4-2685-3D42-E2680D87BEBA}|Web2\\Web2.csproj|d:\\web2\\web2\\models\\domain\\book_author.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{079C13C4-7CD4-2685-3D42-E2680D87BEBA}|Web2\\Web2.csproj|solutionrelative:web2\\models\\domain\\book_author.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{079C13C4-7CD4-2685-3D42-E2680D87BEBA}|Web2\\Web2.csproj|d:\\web2\\web2\\models\\domain\\authors.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{079C13C4-7CD4-2685-3D42-E2680D87BEBA}|Web2\\Web2.csproj|solutionrelative:web2\\models\\domain\\authors.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{079C13C4-7CD4-2685-3D42-E2680D87BEBA}|Web2\\Web2.csproj|d:\\web2\\web2\\models\\domain\\books.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{079C13C4-7CD4-2685-3D42-E2680D87BEBA}|Web2\\Web2.csproj|solutionrelative:web2\\models\\domain\\books.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{079C13C4-7CD4-2685-3D42-E2680D87BEBA}|Web2\\Web2.csproj|d:\\web2\\web2\\controllers\\valuescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{079C13C4-7CD4-2685-3D42-E2680D87BEBA}|Web2\\Web2.csproj|solutionrelative:web2\\controllers\\valuescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{079C13C4-7CD4-2685-3D42-E2680D87BEBA}|Web2\\Web2.csproj|d:\\web2\\web2\\web2.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{079C13C4-7CD4-2685-3D42-E2680D87BEBA}|Web2\\Web2.csproj|solutionrelative:web2\\web2.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AddBookRequestDTO.cs",
+              "DocumentMoniker": "D:\\Web2\\Web2\\Models\\DTO\\AddBookRequestDTO.cs",
+              "RelativeDocumentMoniker": "Web2\\Models\\DTO\\AddBookRequestDTO.cs",
+              "ToolTip": "D:\\Web2\\Web2\\Models\\DTO\\AddBookRequestDTO.cs",
+              "RelativeToolTip": "Web2\\Models\\DTO\\AddBookRequestDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-23T08:55:23.781Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "BookWithAuthorAndPublisherDTO.cs",
+              "DocumentMoniker": "D:\\Web2\\Web2\\Models\\DTO\\BookWithAuthorAndPublisherDTO.cs",
+              "RelativeDocumentMoniker": "Web2\\Models\\DTO\\BookWithAuthorAndPublisherDTO.cs",
+              "ToolTip": "D:\\Web2\\Web2\\Models\\DTO\\BookWithAuthorAndPublisherDTO.cs",
+              "RelativeToolTip": "Web2\\Models\\DTO\\BookWithAuthorAndPublisherDTO.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAA/wA8AAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-23T08:47:18.744Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "BooksController.cs",
+              "DocumentMoniker": "D:\\Web2\\Web2\\Controllers\\BooksController.cs",
+              "RelativeDocumentMoniker": "Web2\\Controllers\\BooksController.cs",
+              "ToolTip": "D:\\Web2\\Web2\\Controllers\\BooksController.cs",
+              "RelativeToolTip": "Web2\\Controllers\\BooksController.cs",
+              "ViewState": "AgIAAF4AAAAAAAAAAAAAADMAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-23T08:44:54.197Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "20260923083722_InitialDatabaseMigration.cs",
+              "DocumentMoniker": "D:\\Web2\\Web2\\Migrations\\20260923083722_InitialDatabaseMigration.cs",
+              "RelativeDocumentMoniker": "Web2\\Migrations\\20260923083722_InitialDatabaseMigration.cs",
+              "ToolTip": "D:\\Web2\\Web2\\Migrations\\20260923083722_InitialDatabaseMigration.cs",
+              "RelativeToolTip": "Web2\\Migrations\\20260923083722_InitialDatabaseMigration.cs",
+              "ViewState": "AgIAACIAAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-23T08:37:23.083Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Web2\\Web2\\Program.cs",
+              "RelativeDocumentMoniker": "Web2\\Program.cs",
+              "ToolTip": "D:\\Web2\\Web2\\Program.cs",
+              "RelativeToolTip": "Web2\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-23T08:35:51.298Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\Web2\\Web2\\appsettings.json",
+              "RelativeDocumentMoniker": "Web2\\appsettings.json",
+              "ToolTip": "D:\\Web2\\Web2\\appsettings.json",
+              "RelativeToolTip": "Web2\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-09-23T07:34:04.422Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "D:\\Web2\\Web2\\Data\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "Web2\\Data\\AppDbContext.cs",
+              "ToolTip": "D:\\Web2\\Web2\\Data\\AppDbContext.cs",
+              "RelativeToolTip": "Web2\\Data\\AppDbContext.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAA1wBoAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-23T07:38:22.854Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Book_Author.cs",
+              "DocumentMoniker": "D:\\Web2\\Web2\\Models\\Domain\\Book_Author.cs",
+              "RelativeDocumentMoniker": "Web2\\Models\\Domain\\Book_Author.cs",
+              "ToolTip": "D:\\Web2\\Web2\\Models\\Domain\\Book_Author.cs",
+              "RelativeToolTip": "Web2\\Models\\Domain\\Book_Author.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-23T07:33:47.983Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Authors.cs",
+              "DocumentMoniker": "D:\\Web2\\Web2\\Models\\Domain\\Authors.cs",
+              "RelativeDocumentMoniker": "Web2\\Models\\Domain\\Authors.cs",
+              "ToolTip": "D:\\Web2\\Web2\\Models\\Domain\\Authors.cs",
+              "RelativeToolTip": "Web2\\Models\\Domain\\Authors.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAA7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-23T07:33:07.38Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Publishers.cs",
+              "DocumentMoniker": "D:\\Web2\\Web2\\Models\\Domain\\Publishers.cs",
+              "RelativeDocumentMoniker": "Web2\\Models\\Domain\\Publishers.cs",
+              "ToolTip": "D:\\Web2\\Web2\\Models\\Domain\\Publishers.cs",
+              "RelativeToolTip": "Web2\\Models\\Domain\\Publishers.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-23T07:32:24.422Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Books.cs",
+              "DocumentMoniker": "D:\\Web2\\Web2\\Models\\Domain\\Books.cs",
+              "RelativeDocumentMoniker": "Web2\\Models\\Domain\\Books.cs",
+              "ToolTip": "D:\\Web2\\Web2\\Models\\Domain\\Books.cs",
+              "RelativeToolTip": "Web2\\Models\\Domain\\Books.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAowAQAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-23T07:30:37.488Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "ValuesController.cs",
+              "DocumentMoniker": "D:\\Web2\\Web2\\Controllers\\ValuesController.cs",
+              "RelativeDocumentMoniker": "Web2\\Controllers\\ValuesController.cs",
+              "ToolTip": "D:\\Web2\\Web2\\Controllers\\ValuesController.cs",
+              "RelativeToolTip": "Web2\\Controllers\\ValuesController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-23T07:07:12.187Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Web2.csproj",
+              "DocumentMoniker": "D:\\Web2\\Web2\\Web2.csproj",
+              "RelativeDocumentMoniker": "Web2\\Web2.csproj",
+              "ToolTip": "D:\\Web2\\Web2\\Web2.csproj",
+              "RelativeToolTip": "Web2\\Web2.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-09-23T07:05:55.675Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }
