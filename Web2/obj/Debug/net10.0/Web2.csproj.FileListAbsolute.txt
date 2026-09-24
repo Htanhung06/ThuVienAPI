@@ -165,3 +165,6 @@ D:\Web2\Web2\obj\Debug\net10.0\refint\Web2.dll
 D:\Web2\Web2\obj\Debug\net10.0\Web2.pdb
 D:\Web2\Web2\obj\Debug\net10.0\Web2.genruntimeconfig.cache
 D:\Web2\Web2\obj\Debug\net10.0\ref\Web2.dll
+D:\Web2\Web2\bin\Debug\net10.0\Swashbuckle.AspNetCore.Swagger.dll
+D:\Web2\Web2\bin\Debug\net10.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+D:\Web2\Web2\bin\Debug\net10.0\Swashbuckle.AspNetCore.SwaggerUI.dll
