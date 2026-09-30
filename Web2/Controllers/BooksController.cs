@@ -23,10 +23,9 @@ namespace Web2.Controllers
 
         // GET http://localhost:port/api/books/get-all-books
         [HttpGet("get-all-books")]
-        public IActionResult GetAll()
+        public IActionResult GetAll([FromQuery] string? filterOn, [FromQuery] string? filterQuery)
         {
-            // Sử dụng repository pattern
-            var allBooks = _bookRepository.GetAllBooks();
+            var allBooks = _bookRepository.GetAllBooks(filterOn, filterQuery);
             return Ok(allBooks);
         }
 

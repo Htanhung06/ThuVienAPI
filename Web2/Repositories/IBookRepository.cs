@@ -5,7 +5,7 @@ namespace Web2.Repositories
 {
     public interface IBookRepository
     {
-        List<BookWithAuthorAndPublisherDTO> GetAllBooks();
+        List<BookWithAuthorAndPublisherDTO> GetAllBooks(string? filterOn = null, string? filterQuery = null);
         BookWithAuthorAndPublisherDTO GetBookById(int id);
         AddBookRequestDTO AddBook(AddBookRequestDTO addBookRequestDTO);
         AddBookRequestDTO? UpdateBookById(int id, AddBookRequestDTO bookDTO);

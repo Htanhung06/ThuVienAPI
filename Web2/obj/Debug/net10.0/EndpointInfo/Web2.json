@@ -164,6 +164,22 @@
         "tags": [
           "Books"
         ],
+        "parameters": [
+          {
+            "name": "filterOn",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filterQuery",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
         "responses": {
           "200": {
             "description": "OK"
@@ -496,11 +512,14 @@
         "additionalProperties": false
       },
       "AddBookRequestDTO": {
+        "required": [
+          "title"
+        ],
         "type": "object",
         "properties": {
           "title": {
-            "type": "string",
-            "nullable": true
+            "minLength": 10,
+            "type": "string"
           },
           "description": {
             "type": "string",
@@ -515,6 +534,8 @@
             "nullable": true
           },
           "rate": {
+            "maximum": 5,
+            "minimum": 0,
             "type": "integer",
             "format": "int32",
             "nullable": true
