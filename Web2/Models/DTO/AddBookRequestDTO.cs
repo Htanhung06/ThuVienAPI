@@ -1,17 +1,25 @@
-﻿namespace Web2.Models.DTO
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Web2.Models.DTO
 {
     public class AddBookRequestDTO
     {
-        public string? Title { get; set; }
+        [Required]
+        [MinLength(10)]
+        public string Title { get; set; }
+
         public string? Description { get; set; }
+
         public bool IsRead { get; set; }
+
         public DateTime? DateRead { get; set; }
+
+        [Range(0, 5, ErrorMessage = "From 0 to 5")]
         public int? Rate { get; set; }
+
         public string? Genre { get; set; }
         public string? CoverUrl { get; set; }
         public DateTime DateAdded { get; set; }
-
-        // Cần có ID của Nhà xuất bản và danh sách ID của các Tác giả để tạo liên kết
         public int PublisherID { get; set; }
         public List<int> AuthorIds { get; set; }
     }
