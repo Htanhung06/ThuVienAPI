@@ -14,19 +14,37 @@ namespace Web2.Repositories
             _dbContext = dbContext;
         }
 
-        public List<AuthorDTO> GellAllAuthors()
+        public List<AuthorDTO> GellAllAuthors(string? filterOn = null, string? filterQuery = null,
+                                      string? sortBy = null, bool isAscending = true,
+                                      int pageNumber = 1, int pageSize = 1000)
         {
-            var allAuthorsDomain = _dbContext.Authors.ToList();
-            var allAuthorDTO = new List<AuthorDTO>();
-            foreach (var authorDomain in allAuthorsDomain)
+            var allAuthors = _dbContext.Authors.Select(author => new AuthorDTO()
             {
-                allAuthorDTO.Add(new AuthorDTO()
+                Id = author.Id,
+                FullName = author.FullName
+            }).AsQueryable();
+
+            // 1. Filtering (Lọc dữ liệu theo tên tác giả)
+            if (string.IsNullOrWhiteSpace(filterOn) == false && string.IsNullOrWhiteSpace(filterQuery) == false)
+            {
+                if (filterOn.Equals("fullname", StringComparison.OrdinalIgnoreCase))
                 {
-                    Id = authorDomain.Id,
-                    FullName = authorDomain.FullName
-                });
+                    allAuthors = allAuthors.Where(x => x.FullName.Contains(filterQuery));
+                }
             }
-            return allAuthorDTO;
+
+            // 2. Sorting (Sắp xếp dữ liệu)
+            if (string.IsNullOrWhiteSpace(sortBy) == false)
+            {
+                if (sortBy.Equals("fullname", StringComparison.OrdinalIgnoreCase))
+                {
+                    allAuthors = isAscending ? allAuthors.OrderBy(x => x.FullName) : allAuthors.OrderByDescending(x => x.FullName);
+                }
+            }
+
+            // 3. Pagination (Phân trang)
+            var skipResults = (pageNumber - 1) * pageSize;
+            return allAuthors.Skip(skipResults).Take(pageSize).ToList();
         }
 
         public AuthorNoIdDTO GetAuthorById(int id)

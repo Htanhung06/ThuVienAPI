@@ -6,6 +6,7 @@ namespace Web2.Models.DTO
     {
         [Required]
         [MinLength(10)]
+        [RegularExpression(@"^[a-zA-Z0-9\s]*$", ErrorMessage = "Tiêu đề không được chứa ký tự đặc biệt.")]
         public string Title { get; set; }
 
         public string? Description { get; set; }

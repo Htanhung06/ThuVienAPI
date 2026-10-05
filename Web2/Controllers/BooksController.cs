@@ -92,6 +92,46 @@ namespace Web2.Controllers
                     $"{nameof(addBookRequestDTO.Rate)} cannot be less than 0 and more than 5");
             }
 
+            // --- BỔ SUNG GIẢI BÀI TẬP PHẦN 6 ---
+
+            // Bài tập 4 & 13: Kiểm tra PublisherID có tồn tại trong CSDL không
+            var publisherExists = _dbContext.Publishers.Any(p => p.Id == addBookRequestDTO.PublisherID);
+            if (!publisherExists)
+            {
+                ModelState.AddModelError(nameof(addBookRequestDTO.PublisherID),
+                    "Nhà xuất bản không tồn tại! Vui lòng nhập ID hợp lệ.");
+            }
+
+            // Bài tập 9: Kiểm tra sách bắt buộc phải có ít nhất 1 tác giả
+            if (addBookRequestDTO.AuthorIds == null || !addBookRequestDTO.AuthorIds.Any())
+            {
+                ModelState.AddModelError(nameof(addBookRequestDTO.AuthorIds),
+                    "Mỗi cuốn sách phải có ít nhất 1 tác giả.");
+            }
+            else
+            {
+                // Bài tập 5: Kiểm tra xem các AuthorID gửi lên có thực sự tồn tại không
+                foreach (var authorId in addBookRequestDTO.AuthorIds)
+                {
+                    var authorExists = _dbContext.Authors.Any(a => a.Id == authorId);
+                    if (!authorExists)
+                    {
+                        ModelState.AddModelError(nameof(addBookRequestDTO.AuthorIds),
+                            $"Tác giả với ID = {authorId} không tồn tại trong hệ thống!");
+                    }
+                }
+            }
+
+            // Bài tập 12: Kiểm tra Title không được trùng trong cùng 1 Publisher
+            var isDuplicateTitle = _dbContext.Books.Any(b => b.Title == addBookRequestDTO.Title && b.PublisherID == addBookRequestDTO.PublisherID);
+            if (isDuplicateTitle)
+            {
+                ModelState.AddModelError(nameof(addBookRequestDTO.Title),
+                    "Tên sách này đã tồn tại trong cùng một nhà xuất bản. Vui lòng chọn tên khác!");
+            }
+
+            // ------------------------------------
+
             if (ModelState.ErrorCount > 0)
             {
                 return false;

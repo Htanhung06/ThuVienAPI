@@ -37,6 +37,10 @@ namespace Web2.Repositories
                 {
                     allBooks = allBooks.Where(x => x.Title.Contains(filterQuery));
                 }
+                else if (filterOn.Equals("description", StringComparison.OrdinalIgnoreCase))
+                {
+                    allBooks = allBooks.Where(x => x.Description != null && x.Description.Contains(filterQuery));
+                }
             }
 
             return allBooks.ToList();
