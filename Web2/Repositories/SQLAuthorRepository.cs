@@ -118,5 +118,11 @@ namespace Web2.Repositories
 
             return books;
         }
+
+        public List<AuthorDTO> GellAllAuthors()
+        {
+            // forward to the parameterized overload using the same default values
+            return GellAllAuthors(null, null, null, true, 1, 1000);
+        }
     }
 }
