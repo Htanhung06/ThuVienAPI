@@ -4,11 +4,25 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi;
 using Microsoft.OpenApi.Models;
+using Serilog;
 using System.Text;
 using Web2.Data;
 using Web2.Repositories;
+using Serilog;
+
 
 var builder = WebApplication.CreateBuilder(args);
+
+// Khởi tạo cấu hình Serilog
+var _logger = new LoggerConfiguration()
+    .WriteTo.Console() // Ghi ra console
+    .WriteTo.File("Logs/Book_log.txt", rollingInterval: RollingInterval.Minute) // Ghi ra file lưu trong thư mục Logs[cite: 34]
+    .MinimumLevel.Information()
+    .CreateLogger();
+
+// Xóa các log mặc định và thêm Serilog
+builder.Logging.ClearProviders();
+builder.Logging.AddSerilog(_logger);
 
 // Add services to the container.
 builder.Services.AddControllers();

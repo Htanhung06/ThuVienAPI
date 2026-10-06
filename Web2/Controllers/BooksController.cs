@@ -5,6 +5,9 @@ using Web2.Models.Domain;
 using Web2.Models.DTO;
 using Web2.Repositories;
 using Web2.CustomActionFilters;
+using Microsoft.Extensions.Logging;
+using System.Text.Json;
+using Microsoft.AspNetCore.Authorization; // Thư viện bắt buộc cho tính năng phân quyền
 
 namespace Web2.Controllers
 {
@@ -14,24 +17,38 @@ namespace Web2.Controllers
     {
         private readonly AppDbContext _dbContext;
         private readonly IBookRepository _bookRepository;
+        private readonly ILogger<BooksController> _logger;
 
-        public BooksController(AppDbContext dbContext, IBookRepository bookRepository)
+        // Đã sửa hàm khởi tạo để nhận ILogger
+        public BooksController(AppDbContext dbContext, IBookRepository bookRepository, ILogger<BooksController> logger)
         {
             _dbContext = dbContext;
             _bookRepository = bookRepository;
+            _logger = logger;
         }
 
         // GET http://localhost:port/api/books/get-all-books
         [HttpGet("get-all-books")]
+        [Authorize(Roles = "Read")] // Bắt buộc đăng nhập tài khoản có quyền Read
         public IActionResult GetAll([FromQuery] string? filterOn, [FromQuery] string? filterQuery)
         {
+            // Bắt đầu ghi log
+            _logger.LogInformation("GetAll Book Action method was invoked");
+            _logger.LogWarning("This is a warning log");
+            _logger.LogError("This is a error log");
+
             var allBooks = _bookRepository.GetAllBooks(filterOn, filterQuery);
+
+            // Ghi log kết quả truy xuất dưới dạng chuỗi JSON
+            _logger.LogInformation($"Finished GetAllBook request with data {JsonSerializer.Serialize(allBooks)}");
+
             return Ok(allBooks);
         }
 
         // GET http://localhost:port/api/books/get-book-by-id/1
         [HttpGet]
         [Route("get-book-by-id/{id:int}")]
+        [Authorize(Roles = "Read")] // Giới hạn quyền Đọc
         public IActionResult GetBookById([FromRoute] int id)
         {
             var bookWithIdDTO = _bookRepository.GetBookById(id);
@@ -40,6 +57,7 @@ namespace Web2.Controllers
 
         // POST http://localhost:port/api/books/add-book
         [HttpPost("add-book")]
+        [Authorize(Roles = "Write")] // Giới hạn quyền Ghi
         // [ValidateModel] // Bỏ dấu // ở đầu dòng này nếu bạn đã tạo CustomActionFilter
         public IActionResult AddBook([FromBody] AddBookRequestDTO addBookRequestDTO)
         {
@@ -55,6 +73,7 @@ namespace Web2.Controllers
 
         // PUT http://localhost:port/api/books/update-book-by-id/{id}
         [HttpPut("update-book-by-id/{id}")]
+        [Authorize(Roles = "Write")] // Giới hạn quyền Ghi
         public IActionResult UpdateBookById(int id, [FromBody] AddBookRequestDTO bookDTO)
         {
             var updateBook = _bookRepository.UpdateBookById(id, bookDTO);
@@ -63,6 +82,7 @@ namespace Web2.Controllers
 
         // DELETE http://localhost:port/api/books/delete-book-by-id/{id}
         [HttpDelete("delete-book-by-id/{id}")]
+        [Authorize(Roles = "Write")] // Giới hạn quyền Ghi
         public IActionResult DeleteBookById(int id)
         {
             var deleteBook = _bookRepository.DeleteBookById(id);
