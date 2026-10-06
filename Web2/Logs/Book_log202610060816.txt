@@ -1,0 +1,14 @@
+2026-10-06 08:16:06.524 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7274/api/Authors/get-all-author?pageNumber=1&pageSize=1000 - null null
+2026-10-06 08:16:06.529 +07:00 [INF] Executing endpoint 'Web2.Controllers.AuthorsController.GetAllAuthor (Web2)'
+2026-10-06 08:16:06.533 +07:00 [INF] Route matched with {action = "GetAllAuthor", controller = "Authors"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetAllAuthor(System.String, System.String, System.String, Boolean, Int32, Int32) on controller Web2.Controllers.AuthorsController (Web2).
+2026-10-06 08:16:06.548 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2026-10-06 08:16:06.550 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2026-10-06 08:16:06.599 +07:00 [INF] Executed DbCommand (8ms) [Parameters=[@p='?' (DbType = Int32), @p0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[FullName]
+FROM [Authors] AS [a]
+ORDER BY (SELECT 1)
+OFFSET @p ROWS FETCH NEXT @p0 ROWS ONLY
+2026-10-06 08:16:06.603 +07:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Web2.Models.DTO.AuthorDTO, Web2, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-10-06 08:16:06.605 +07:00 [INF] Executed action Web2.Controllers.AuthorsController.GetAllAuthor (Web2) in 69.5757ms
+2026-10-06 08:16:06.606 +07:00 [INF] Executed endpoint 'Web2.Controllers.AuthorsController.GetAllAuthor (Web2)'
+2026-10-06 08:16:06.607 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7274/api/Authors/get-all-author?pageNumber=1&pageSize=1000 - 200 null application/json; charset=utf-8 82.7302ms

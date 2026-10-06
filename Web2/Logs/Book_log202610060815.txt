@@ -1,0 +1,28 @@
+2026-10-06 08:15:09.212 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7274/api/Images/Download?id=1 - null null
+2026-10-06 08:15:09.220 +07:00 [INF] Executing endpoint 'Web2.Controllers.ImagesController.DownloadImage (Web2)'
+2026-10-06 08:15:09.223 +07:00 [INF] Route matched with {action = "DownloadImage", controller = "Images"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult DownloadImage(Int32) on controller Web2.Controllers.ImagesController (Web2).
+2026-10-06 08:15:09.355 +07:00 [INF] Executed DbCommand (9ms) [Parameters=[@Id='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [i].[Id], [i].[FileDescription], [i].[FileExtension], [i].[FileName], [i].[FilePath], [i].[FileSizeInBytes]
+FROM [Images] AS [i]
+WHERE [i].[Id] = @Id
+2026-10-06 08:15:09.359 +07:00 [INF] Executing FileContentResult, sending file with download name 'test.jpg' ...
+2026-10-06 08:15:09.372 +07:00 [INF] Executed action Web2.Controllers.ImagesController.DownloadImage (Web2) in 147.5804ms
+2026-10-06 08:15:09.373 +07:00 [INF] Executed endpoint 'Web2.Controllers.ImagesController.DownloadImage (Web2)'
+2026-10-06 08:15:09.373 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7274/api/Images/Download?id=1 - 200 477483 application/octet-stream 161.7236ms
+2026-10-06 08:15:27.104 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7274/api/Images/Download?id=1 - null null
+2026-10-06 08:15:27.156 +07:00 [INF] Executing endpoint 'Web2.Controllers.ImagesController.DownloadImage (Web2)'
+2026-10-06 08:15:27.157 +07:00 [INF] Route matched with {action = "DownloadImage", controller = "Images"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult DownloadImage(Int32) on controller Web2.Controllers.ImagesController (Web2).
+2026-10-06 08:15:27.203 +07:00 [INF] Executed DbCommand (7ms) [Parameters=[@Id='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [i].[Id], [i].[FileDescription], [i].[FileExtension], [i].[FileName], [i].[FilePath], [i].[FileSizeInBytes]
+FROM [Images] AS [i]
+WHERE [i].[Id] = @Id
+2026-10-06 08:15:27.206 +07:00 [INF] Executing FileContentResult, sending file with download name 'test.jpg' ...
+2026-10-06 08:15:27.218 +07:00 [INF] Executed action Web2.Controllers.ImagesController.DownloadImage (Web2) in 59.9481ms
+2026-10-06 08:15:27.218 +07:00 [INF] Executed endpoint 'Web2.Controllers.ImagesController.DownloadImage (Web2)'
+2026-10-06 08:15:27.221 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7274/api/Images/Download?id=1 - 200 477483 application/octet-stream 117.0581ms
+2026-10-06 08:15:47.767 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7274/Images/test.jpg - null null
+2026-10-06 08:15:47.798 +07:00 [INF] Sending file. Request path: '/test.jpg'. Physical path: 'D:\Web2\Web2\Images\test.jpg'
+2026-10-06 08:15:47.800 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7274/Images/test.jpg - 200 477483 image/jpeg 33.3825ms
+2026-10-06 08:15:47.879 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7274/favicon.ico - null null
+2026-10-06 08:15:47.883 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7274/favicon.ico - 404 0 null 3.4345ms
+2026-10-06 08:15:47.887 +07:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7274/favicon.ico, Response status code: 404

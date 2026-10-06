@@ -1,0 +1,35 @@
+2026-10-06 08:14:18.816 +07:00 [INF] User profile is available. Using 'C:\Users\ADMIN\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-10-06 08:14:18.998 +07:00 [INF] Now listening on: https://localhost:7274
+2026-10-06 08:14:19.000 +07:00 [INF] Now listening on: http://localhost:5267
+2026-10-06 08:14:19.042 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-10-06 08:14:19.043 +07:00 [INF] Hosting environment: Development
+2026-10-06 08:14:19.044 +07:00 [INF] Content root path: D:\Web2\Web2
+2026-10-06 08:14:19.432 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7274/_vs/browserLink - null null
+2026-10-06 08:14:19.432 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7274/_framework/aspnetcore-browser-refresh.js - null null
+2026-10-06 08:14:19.460 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7274/_framework/aspnetcore-browser-refresh.js - 200 14913 application/javascript; charset=utf-8 36.2587ms
+2026-10-06 08:14:19.499 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7274/_vs/browserLink - 200 null text/javascript; charset=UTF-8 76.2957ms
+2026-10-06 08:14:19.539 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7274/swagger/v1/swagger.json - null null
+2026-10-06 08:14:19.587 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7274/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 48.3791ms
+2026-10-06 08:14:40.430 +07:00 [INF] Request starting HTTP/2 POST https://localhost:7274/api/Images/Upload - multipart/form-data; boundary=----WebKitFormBoundaryw3cNkFld6nLmBUfq 477919
+2026-10-06 08:14:41.131 +07:00 [INF] Executing endpoint 'Web2.Controllers.ImagesController.Upload (Web2)'
+2026-10-06 08:14:41.146 +07:00 [INF] Route matched with {action = "Upload", controller = "Images"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult Upload(Web2.Models.DTO.ImageUploadRequestDTO) on controller Web2.Controllers.ImagesController (Web2).
+2026-10-06 08:14:42.181 +07:00 [INF] Executed DbCommand (65ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Images] ([FileDescription], [FileExtension], [FileName], [FilePath], [FileSizeInBytes])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4);
+2026-10-06 08:14:42.218 +07:00 [INF] Executing OkObjectResult, writing value of type 'Web2.Models.Domain.Image'.
+2026-10-06 08:14:42.237 +07:00 [INF] Executed action Web2.Controllers.ImagesController.Upload (Web2) in 1086.2732ms
+2026-10-06 08:14:42.239 +07:00 [INF] Executed endpoint 'Web2.Controllers.ImagesController.Upload (Web2)'
+2026-10-06 08:14:42.247 +07:00 [INF] Request finished HTTP/2 POST https://localhost:7274/api/Images/Upload - 200 null application/json; charset=utf-8 1818.0777ms
+2026-10-06 08:14:50.899 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7274/api/Images - null null
+2026-10-06 08:14:50.905 +07:00 [INF] Executing endpoint 'Web2.Controllers.ImagesController.GetAllInfoImages (Web2)'
+2026-10-06 08:14:50.908 +07:00 [INF] Route matched with {action = "GetAllInfoImages", controller = "Images"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult GetAllInfoImages() on controller Web2.Controllers.ImagesController (Web2).
+2026-10-06 08:14:51.134 +07:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[Id], [i].[FileDescription], [i].[FileExtension], [i].[FileName], [i].[FilePath], [i].[FileSizeInBytes]
+FROM [Images] AS [i]
+2026-10-06 08:14:51.142 +07:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Web2.Models.Domain.Image, Web2, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-10-06 08:14:51.143 +07:00 [INF] Executed action Web2.Controllers.ImagesController.GetAllInfoImages (Web2) in 234.3851ms
+2026-10-06 08:14:51.144 +07:00 [INF] Executed endpoint 'Web2.Controllers.ImagesController.GetAllInfoImages (Web2)'
+2026-10-06 08:14:51.145 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7274/api/Images - 200 null application/json; charset=utf-8 246.4907ms

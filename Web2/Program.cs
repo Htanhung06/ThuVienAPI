@@ -2,21 +2,19 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
-using Microsoft.OpenApi;
 using Microsoft.OpenApi.Models;
+using Microsoft.Extensions.FileProviders; // Thêm thư viện này để đọc file tĩnh
 using Serilog;
 using System.Text;
 using Web2.Data;
 using Web2.Repositories;
-using Serilog;
-
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Khởi tạo cấu hình Serilog
 var _logger = new LoggerConfiguration()
-    .WriteTo.Console() // Ghi ra console
-    .WriteTo.File("Logs/Book_log.txt", rollingInterval: RollingInterval.Minute) // Ghi ra file lưu trong thư mục Logs[cite: 34]
+    .WriteTo.Console()
+    .WriteTo.File("Logs/Book_log.txt", rollingInterval: RollingInterval.Minute)
     .MinimumLevel.Information()
     .CreateLogger();
 
@@ -27,6 +25,7 @@ builder.Logging.AddSerilog(_logger);
 // Add services to the container.
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddHttpContextAccessor();
 
 // ==========================================
 // CẤU HÌNH SWAGGER VÀ BẢO MẬT JWT (PHẦN 8)
@@ -35,7 +34,6 @@ builder.Services.AddSwaggerGen(options =>
 {
     options.SwaggerDoc("v1", new OpenApiInfo { Title = "Book API", Version = "v1" });
 
-    // Định nghĩa phương thức xác thực Bearer Token
     options.AddSecurityDefinition(JwtBearerDefaults.AuthenticationScheme, new OpenApiSecurityScheme
     {
         Name = "Authorization",
@@ -45,7 +43,6 @@ builder.Services.AddSwaggerGen(options =>
         Description = "Nhập 'Bearer' [khoảng trắng] và theo sau là chuỗi token của bạn. Ví dụ: Bearer eyJhbGci..."
     });
 
-    // Yêu cầu Swagger gắn Token vào header khi gọi API
     options.AddSecurityRequirement(new OpenApiSecurityRequirement
     {
         {
@@ -99,6 +96,7 @@ builder.Services.AddScoped<IBookRepository, SQLBookRepository>();
 builder.Services.AddScoped<IAuthorRepository, SQLAuthorRepository>();
 builder.Services.AddScoped<IPublisherRepository, SQLPublisherRepository>();
 builder.Services.AddScoped<ITokenRepository, TokenRepository>();
+builder.Services.AddScoped<IImageRepository, LocalImageRepository>(); // Di chuyển xuống đây cho gọn
 
 // ==========================================   
 // CẤU HÌNH XÁC THỰC JWT (PHẦN 8)
@@ -129,6 +127,15 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+// ==========================================   
+// CẤU HÌNH CHO PHÉP TRUY CẬP FILE ẢNH
+// ==========================================
+app.UseStaticFiles(new StaticFileOptions
+{
+    FileProvider = new PhysicalFileProvider(Path.Combine(builder.Environment.ContentRootPath, "Images")),
+    RequestPath = "/Images"
+});
 
 // BẮT BUỘC ĐẶT TRƯỚC AUTHORIZATION
 app.UseAuthentication();
